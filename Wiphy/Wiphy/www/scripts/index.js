@@ -31,7 +31,22 @@
         var temp = weather.main.temp - 273.15;
         temp = (temp * (9 / 5)) + 32;
 
+        if (temp < 40) {
+            coldWeather();
+        }
+
         $("#weather").text(temp.toFixed(1) + "\xB0");
+    }
+
+    function coldWeather() {
+        var url = "http://api.giphy.com/v1/gifs/search?q=cold&api_key=jcNZmURxlYtdcgYj0RBzh9VMcVtmJ0nu"
+        $.getJSON(url)
+            .done(function (results) {
+                var img = document.createElement("img");
+                img.setAttribute("src", results.data[0].images.original.url);
+                img.setAttribute("class", "img-fluid mx-auto");
+                $('#weather-image').append(img);
+            });
     }
 
     function onPause() {

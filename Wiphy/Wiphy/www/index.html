@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://cdnjs.cloudflare.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://media2.giphy.com/ https://media1.giphy.com/ https://giphy.com/ https://api.giphy.com/ https://ssl.gstatic.com https://cdnjs.cloudflare.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no">
@@ -12,7 +12,17 @@
         <title>Wiphy</title>
     </head>
     <body>
-        <h2 class="text-center" id="weather"></h2>
+        <div class="container-fluid">
+            <div class="row bg-white" style="height: 25vh">
+                <div class="col-md-12">
+                    <h2 class="text-center" id="weather" style="font-size:7rem"></h2>
+                </div>
+            </div>
+            <div class="row bg-dark">
+                <div id="weather-image"  class="col-md-12">
+                </div>
+            </div>
+        </div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
