@@ -68,7 +68,7 @@
                 console.log(results);
                 $.each(results.data, function (key, value) {
                     console.log(key + " " + value.images.original.url);
-                    var carouselItem = $("<div class='carousel-item'></div>").html("<img class=' img-fluid d-block w-100' src=" + value.images.original.url + " />"); 
+                    var carouselItem = $("<div class='carousel-item'></div>").html("<img class='img-fluid d-block w-100' style='height:50vh' src=" + value.images.original.url + " />"); 
                     $("#carousel-body").append(carouselItem);
                 })
                 //var di = document.createElement("img");
