@@ -29,6 +29,7 @@
     };
 
     function getWeather(weather) {
+        weather.main.temp = 300;
         var tempKelvin = weather.main.temp;
         var tempCelcius = getTempCelcius(weather);
         var tempFarenheight = getTempFarenheight(weather);
@@ -36,7 +37,15 @@
         var humidity = weather.main.humidity;
 
         displayWeatherInfo(tempCelcius, tempFarenheight, tempKelvin, humidity, wind);
-        coldWeather();
+        if (weather.main.temp < 283) {
+            coldWeather();
+        }
+        else if (weather.main.temp < 297 && weather.main.temp > 283) {
+            warmWeather();
+        }
+        else {
+            hotWeather();
+        }
     }
 
     function displayWeatherInfo(celcius, farenheight, kelvin, humidity, wind) {
@@ -60,21 +69,45 @@
     }
 
 
-    function coldWeather() {
-        var url = "http://api.giphy.com/v1/gifs/search?q=cold&api_key=jcNZmURxlYtdcgYj0RBzh9VMcVtmJ0nu"
-
+    function warmWeather() {
+        var url = "http://api.giphy.com/v1/gifs/search?q=warm&api_key=jcNZmURxlYtdcgYj0RBzh9VMcVtmJ0nu"
+        $("#weather-image").empty();
         $.getJSON(url)
             .done(function (results) {
                 console.log(results);
                 $.each(results.data, function (key, value) {
                     console.log(key + " " + value.images.original.url);
-                    var carouselItem = $("<img class='img-fluid d-block w-100' style='height:50vh' src=" + value.images.original.url + " />"); 
+                    var carouselItem = $("<img class='img-fluid d-block w-100' style='height:50vh' src=" + value.images.original.url + " /><hr />");
                     $("#weather-image").append(carouselItem);
                 })
-                //var di = document.createElement("img");
-                //img.setAttribute("src", results.data[0].images.original.url);
-                //img.setAttribute("class", "img-fluid mx-auto");
-                //$('#weather-image').append(img);
+            });
+    }
+
+    function hotWeather() {
+        var url = "http://api.giphy.com/v1/gifs/search?q=hot&api_key=jcNZmURxlYtdcgYj0RBzh9VMcVtmJ0nu"
+        $("#weather-image").empty();
+        $.getJSON(url)
+            .done(function (results) {
+                console.log(results);
+                $.each(results.data, function (key, value) {
+                    console.log(key + " " + value.images.original.url);
+                    var carouselItem = $("<img class='img-fluid d-block w-100' style='height:50vh' src=" + value.images.original.url + " /><hr />");
+                    $("#weather-image").append(carouselItem);
+                })
+            });
+    }
+
+    function coldWeather() {
+        var url = "http://api.giphy.com/v1/gifs/search?q=cold&api_key=jcNZmURxlYtdcgYj0RBzh9VMcVtmJ0nu"
+        $("#weather-image").empty();
+        $.getJSON(url)
+            .done(function (results) {
+                console.log(results);
+                $.each(results.data, function (key, value) {
+                    console.log(key + " " + value.images.original.url);
+                    var carouselItem = $("<img class='img-fluid d-block w-100' style='height:50vh' src=" + value.images.original.url + " /><hr />"); 
+                    $("#weather-image").append(carouselItem);
+                })
             });
     }
 
