@@ -13,15 +13,20 @@
     <title>Wiphy</title>
 </head>
 <body class="bg-dark">
-    <div class="container" style="height:25vh">
+    <nav class="navbar justify-content-center fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/Wiphy-Logo4.png" width="40" height="40" alt="">
+        </a>
+    </nav>
+    <div class="container mb-2" style="height:25vh;margin-top:65px">
         <div class="row text-center" id="weather-container">
 
             <div class="col-12">
-                <header class="text-center text-white"><h1>Waterloo</h1></header>
-                <h2 class="text-center text-white" id="temp-celcius" style="font-size:calc(1rem + 8vw)"></h2>
+                <header class="text-center"><h1>Waterloo</h1></header>
+                <h2 class="text-center" id="temp-celcius" style="font-size:calc(1rem + 8vw)"></h2>
             </div>
         </div>
-        <div class="row bg-dark text-center">
+        <div class="row text-center" id="weather-information">
             <div class="col">
                 <h3 class="badge badge-primary text-white" id="temp-farenheight"></h3>
             </div>
@@ -40,26 +45,7 @@
     <div class="container mb-3" style="height:50vh">
         <div class="row pt-2">
             <div class="col-12" id="weather-image">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" id="carousel-body">
-                        <div class="carousel-item active">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container" style="height:25vh">
-        <div class="row bg-dark">
-            <div class="col-12">
-                <a class="float-left" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="float-right" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+
             </div>
         </div>
     </div>

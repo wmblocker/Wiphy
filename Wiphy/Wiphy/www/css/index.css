@@ -2,18 +2,14 @@ body {
     font-family: 'Arimo', sans-serif !important;
 }
 
-.carousel-control-next, .carousel-control-prev {
-    position: absolute;
-    top: 0;
-    bottom: -60vh;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 15%;
-    color: #fff;
-    text-align: center;
-    opacity: .5;
+#weather-information {
+    background-color: #bdc3c7;
+}
+#weather-information h3{
+    width:80%;
+}
+
+#weather-container {
+    background-color: #ecf0f1;
+
 }
